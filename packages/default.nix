@@ -8,11 +8,11 @@
   lib,
   ...
 }: let
-  gpu-api = pkgs.callPackage multimedia/video/gpu/driver/hantro-imx {};
+  vpu-api = pkgs.callPackage multimedia/video/vpu/driver/hantro-imx {};
 in
   with lib; {
       environment.systemPackages = with pkgs; [
-          #api for working with the imx8 gpu
-          gpu-api
+          #api for working with the imx8 vpu
+          vpu-api
       ];
 }
