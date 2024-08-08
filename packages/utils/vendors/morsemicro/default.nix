@@ -23,7 +23,8 @@ stdenv.mkDerivation rec {
         pkg-config
   ];
 
-  buildPhase = ''cd wpa_supplicant/wpa_supplicant/
+  buildPhase = '' tar -xzvf source.tar
+                 cd wpa_supplicant/wpa_supplicant/
                  make all
                  cd ../../morsecli
                  make all
