@@ -11,7 +11,7 @@
   v4l = pkgs.callPackage multimedia/video/v4l {};
 in
   with lib; {
-    options.nrc-utils = {
+    options.v4l = {
       enable = mkOption {
         type = types.bool;
         default = true;
