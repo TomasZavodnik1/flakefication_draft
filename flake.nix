@@ -3,7 +3,7 @@
 
 {
 
-  description = "multimedia audio codec opuscodec driver";
+  description = "utils vendor morsemicro package";
   inputs = {
     # NixOS official package source, here using the nixos-24.05 branch
   };

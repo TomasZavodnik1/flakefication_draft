@@ -1,18 +1,18 @@
 # Copyright 2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
 
-#overlay for opus tools codec
+#overlay for morsemicro drivers
 {
   config,
   pkgs,
   lib,
   ...
 }: let
-  opustools = pkgs.callPackage multimedia/audio/codecs/opustools {};
+  morsemicro-pkg = pkgs.callPackage utils/vendors/morsemicro {};
 in
   with lib; {
       environment.systemPackages = with pkgs; [
-          #codec opus tools
-          opustools
+          #morse micro driver
+          morsemicro-pkg
       ];
 }
