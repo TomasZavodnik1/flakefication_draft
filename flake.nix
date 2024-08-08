@@ -3,7 +3,7 @@
 
 {
 
-  description = "python-package swig lib package flake wrapper";
+  description = "multimedia video gpu driver api package for IMX8 flake wrapper";
   inputs = {
     # NixOS official package source, here using the nixos-24.05 branch
   };
