@@ -3,13 +3,13 @@
 
 {
 
-  description = "multimedia video vpu driver api package for IMX8 flake wrapper";
+  description = "multimedia audio codec opuscodec driver";
   inputs = {
     # NixOS official package source, here using the nixos-24.05 branch
   };
 
   outputs = _: {
-      #imports package for working with the vpu of the IMX8
+      #imports package for the opus coded
       vpu-api = import packages;
   };
 }

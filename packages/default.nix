@@ -1,18 +1,18 @@
 # Copyright 2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
 
-#overlay for gpu driver
+#overlay for opus tools codec
 {
   config,
   pkgs,
   lib,
   ...
 }: let
-  vpu-api = pkgs.callPackage multimedia/video/vpu/driver/hantro-imx {};
+  opustools = pkgs.callPackage multimedia/audio/codecs/opustools {};
 in
   with lib; {
       environment.systemPackages = with pkgs; [
-          #api for working with the imx8 vpu
-          vpu-api
+          #codec opus tools
+          opustools
       ];
 }
