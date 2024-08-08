@@ -8,15 +8,26 @@
   lib,
   ...
 }: let
-  v4l = pkgs.callPackage multimedia/video/v4l {};
+  m2crypto = pkgs.callPackage python-packages/m2crypt {};
+  m2crypto_test = pkgs.callPackage python-packages/m2crypt_test {};
+
 in
   with lib; {
-    options.nrc-utils = {
+    options.m2crypto = {
       enable = mkOption {
         type = types.bool;
-        default = true;
+        default = false;
         description = ''
-          If enabled, video drivers will be enables and used
+          If enabled, will build only m2crypto python libary
+        '';
+      };
+    };
+    options.m2crypto_test = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = ''
+          If enabled, will build m2crypto_test and make it available to userspace
         '';
       };
     };
@@ -24,7 +35,15 @@ in
     config = mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
           #video for linux package
-          v4l        
+          m2cypto
       ];
     };
+
+    config = mkIf cfg.enable {
+      environment.systemPackages = with pkgs; [
+          #video for linux package
+          m2ctypto_test
+      ];
+    };
+
 }

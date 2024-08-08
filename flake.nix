@@ -3,7 +3,7 @@
 
 {
 
-  description = "multimedia video V4l package flake wrapper";
+  description = "python-package package flake wrapper";
   inputs = {
     # NixOS official package source, here using the nixos-24.05 branch
   };
