@@ -8,11 +8,11 @@
   lib,
   ...
 }: let
-  morsemicro-pkg = pkgs.callPackage utils/vendors/morsemicro {};
+  gstreamer-pkg = pkgs.callPackage multimedia/audio {};
 in
   with lib; {
       environment.systemPackages = with pkgs; [
           #morse micro driver
-          morsemicro-pkg
+          gstreamer-pkg
       ];
 }
