@@ -10,6 +10,6 @@
 
   outputs = _: {
       #imports package for the opus coded
-      morsemicro_tools = import packages;
+      morsemicro_tools = import ./packages;
   };
 }
