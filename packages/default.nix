@@ -1,16 +1,16 @@
 # Copyright 2024 TII (SSRC) and the Ghaf contributors
 # SPDX-License-Identifier: Apache-2.0
 
-#overlay for morsemicro drivers
+#overlay for cpu benchmarks
 {
   config,
   pkgs,
   lib,
   ...
 }: let
-  whetstone-pkg = pkgs.callPackage whetstone {};
-  drystone-pkg = pkgs.callPackage drystone {};
-  coremark-pkg = pkgs.callPackage coremark {};
+  whetstone-pkg = pkgs.callPackage ./whetstone {};
+  drystone-pkg = pkgs.callPackage ./drystone {};
+  coremark-pkg = pkgs.callPackage ./coremark {};
 
 in
   with lib; {
