@@ -10,18 +10,10 @@
 }: let
   m2crypto = pkgs.callPackage python-packages/m2crypt {};
   m2crypto_test = pkgs.callPackage python-packages/m2crypt_test {};
+  swig = pkgs.callPackage python-packages/swig {};
 
 in
   with lib; {
-    options.m2crypto = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          If enabled, will build only m2crypto python libary
-        '';
-      };
-    };
     options.m2crypto_test = {
       enable = mkOption {
         type = types.bool;
@@ -32,13 +24,13 @@ in
       };
     };
 
-    config = mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [
-          #video for linux package
+    environment.systemPackages = with pkgs; [
+          #python m2crypto lib
           m2cypto
-      ];
-    };
-
+          #python package swig
+          swig
+    ];
+    
     config = mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
           #video for linux package
