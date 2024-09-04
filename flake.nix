@@ -9,7 +9,7 @@
   };
 
   outputs = _: {
-      #imports package for the opus coded
-      morsemicro_tools = import ./packages;
+      #imports packages for cpu benchmarking
+      cpu_benchmarks = import ./packages;
   };
 }

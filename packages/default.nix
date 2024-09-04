@@ -8,11 +8,18 @@
   lib,
   ...
 }: let
-  morsemicro-pkg = pkgs.callPackage utils/vendors/morsemicro {};
+  whetstone-pkg = pkgs.callPackage whetstone {};
+  drystone-pkg = pkgs.callPackage drystone {};
+  coremark-pkg = pkgs.callPackage coremark {};
+
 in
   with lib; {
       environment.systemPackages = with pkgs; [
-          #morse micro driver
-          morsemicro-pkg
+          #coremark cpu benchmark software
+          coremark-pkg
+          #drystone cpu benchmark software
+          drystone-pkg
+          #whetstone cpu benchmark software
+          whetstone-pkg
       ];
 }
