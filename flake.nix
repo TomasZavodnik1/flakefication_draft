@@ -9,7 +9,7 @@
   };
 
   outputs = _: {
-      #package import v4l video for linux packages, needed to stream webcamera data
+      #package import for python swig lib
       v4l = import packages;
   };
 }

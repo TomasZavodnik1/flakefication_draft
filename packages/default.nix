@@ -13,15 +13,6 @@
 
 in
   with lib; {
-    options.m2crypto = {
-      enable = mkOption {
-        type = types.bool;
-        default = false;
-        description = ''
-          If enabled, will build only m2crypto python libary
-        '';
-      };
-    };
     options.m2crypto_test = {
       enable = mkOption {
         type = types.bool;
@@ -32,12 +23,12 @@ in
       };
     };
 
-    config = mkIf cfg.enable {
-      environment.systemPackages = with pkgs; [
+    
+    environment.systemPackages = with pkgs; [
           #video for linux package
           m2cypto
-      ];
-    };
+    ];
+    
 
     config = mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
